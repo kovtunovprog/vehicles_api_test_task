@@ -18,7 +18,7 @@ async def validation(db, data: dict, FIELDS):
     if year < 1900 or year > datetime.now().year:
         code = 422
         text = 'Invalid year value'
-    al = await check_vin(db, data)
+    al = await check_vin(db, data['vin'])
     print(al)
     if (al) is False:
         code = 409

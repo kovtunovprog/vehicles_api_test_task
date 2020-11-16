@@ -44,10 +44,11 @@ async def check_vin(db, vin=None):
     # Return instance by id
     if vin is None:
         return 'You have to give vin'
-    vin = db.vehicles.find({'vin': vin})
-    if vin is None:
-        return True
-    return False
+    print(vin)
+    vin_res = await db.vehicles.find_one({'vin': vin})
+    if vin_res:
+        return False
+    return True
 
 
 async def update_instance(db, veh_id=None, data: dict = None):
