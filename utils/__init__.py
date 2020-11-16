@@ -1,0 +1,1 @@
+from utils.init_app import init_func

@@ -1,0 +1,51 @@
+.vehicle-form {
+    background: #F2F1F1;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 20px 20px 50px 20px;
+}
+
+.query-results-many-field, .query-results-one-field {
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.query-results-header {
+    background: #00A5BB;
+    color: #FFFFFF;
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+}
+
+
+.vehicle-form .query-results-header .header-result-title {
+    margin-top: 5px;
+}
+
+.vehicle-form .form-one-field {
+    margin-bottom: 15px;
+}
+
+.get-list-button-row {
+    margin-bottom: 15px;
+}
+
+.results {
+    padding: 20px;
+    overflow: scroll;
+    height: 200px;
+}
+
+.results-lg {
+    padding: 20px;
+    overflow: scroll;
+    height: 254px;
+}
+
+.success-result {
+    color: #00B148;
+}
+
+.error-result {
+    color: #F10032;
+}

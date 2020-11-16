@@ -1,0 +1,289 @@
+{% extends 'utils/base.html' %}
+
+{% block head %}
+	<title>Demo page</title>
+{% endblock %}
+
+{% block content %}
+	<br><br>
+	<div class="container">
+        <div class="row">
+            <h1>Vehicles Api</h1>
+        </div>
+    </div>
+    <br>
+
+    <div class="container vehicle-form" id="add-vehicle-form">
+        <h2>add vehicle</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+                <div class="form-group row">
+                    <label for="vendor-add" class="col-sm-2 col-form-label">vendor</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="vendor-add" name="vendor">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="model-add" class="col-sm-2 col-form-label">model</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="model-add" name="model">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="year-add" class="col-sm-2 col-form-label">year</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="year-add" name="year">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="color-add" class="col-sm-2 col-form-label">color</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="color-add" name="color">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="VIN-add" class="col-sm-2 col-form-label">VIN</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="VIN-add" name="vin">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 query-results-many-field">
+                <div class="row">
+                    <div class="col d-flex align-items-center query-results-header add-result">
+                        <h5 class="header-result-title">results</h5>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="results" id="add-vehicle-results">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-outline-info" id="button-add">Add vehicle</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container vehicle-form" id="edit-vehicle-form">
+        <h2>edit vehicle</h2>
+        <br>
+        <div class="row">
+
+            <div class="col-sm-12 col-md-5">
+                <div class="form-group row">
+                    <label for="edit-id" class="col-sm-2 col-form-label">id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="edit-id" name="id">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="vendor-edit" class="col-sm-2 col-form-label">vendor</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="vendor-edit" name="vendor">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="model-edit" class="col-sm-2 col-form-label">model</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="model-edit" name="model">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="year-edit" class="col-sm-2 col-form-label">year</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="year-edit" name="year">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="color-edit" class="col-sm-2 col-form-label">color</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="color-edit" name="color">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="VIN-edit" class="col-sm-2 col-form-label">VIN</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="VIN-edit" name="vin">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 query-results-many-field result-edit">
+                <div class="row">
+                    <div class="col d-flex align-items-center query-results-header">
+                        <h5 class="header-result-title">results</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="results" id="edit-vehicle-results">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-outline-info" id="button-edit">edit vehicle</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container vehicle-form" id="filtered-vehicle-form">
+        <h2>filtered vehicle</h2>
+        <br>
+        <div class="row">
+
+            <div class="col-sm-12 col-md-5">
+                <div class="form-group row">
+                    <label for="vendor-filtered" class="col-sm-2 col-form-label">vendor</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="vendor-filtered" name="vendor">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="model-filtered" class="col-sm-2 col-form-label">model</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="model-filtered" name="model">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="year-filtered" class="col-sm-2 col-form-label">year</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="year-filtered" name="year">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="color-filtered" class="col-sm-2 col-form-label">color</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="color-filtered" name="color">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="VIN-filtered" class="col-sm-2 col-form-label">VIN</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="VIN-filtered" name="vin">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 query-results-many-field">
+                <div class="row">
+                    <div class="col d-flex align-items-center query-results-header">
+                        <h5 class="header-result-title">results</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="results" id="filtered-vehicle-result">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-outline-info" id="button-filtered">Filtered vehicle</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container vehicle-form">
+        <h2>get vehicle</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-8" id="get_vehicle_form">
+                <form class="form-inline form-one-field">
+                    <div class="form-group mb-2">
+                        <span class="">id</span>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="get_id" class="sry-only"></label>
+                        <input type="text" class="form-control" id="get_id" name="id">
+                    </div>
+                    <button type="button" class="btn btn-outline-info mb-2" id="button-get-vehicle">get vehicles</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 query-results-one-field">
+                <div class="row">
+                    <div class="col d-flex align-items-center query-results-header">
+                        <h5 class="header-result-title">results</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="results-lg" id="get-vehicle-results">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container vehicle-form">
+        <h2>del vehicle</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-8" id="del_vehicle_form">
+                <form class="form-inline form-one-field">
+                    <div class="form-group mb-2">
+                        <span class="">id</span>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="del_id" class="sry-only"></label>
+                        <input type="text" class="form-control" id="del_id" name="id">
+                    </div>
+                    <button type="button" class="btn btn-outline-info mb-2" id="button-del">del vehicle</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 query-results-one-field">
+                <div class="row">
+                    <div class="col d-flex align-items-center query-results-header">
+                        <h5 class="header-result-title">results</h5>
+                        <div class="results-lg" id="del-vehicle-results">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container vehicle-form">
+        <h2>get vehicle list</h2>
+        <br>
+        <div class="row get-list-button-row">
+            <div class="col">
+                <button type="button" class="btn btn-outline-info mb-2" id="button-get-list">get vehicles list</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 query-results-one-field">
+                <div class="row">
+                    <div class="col d-flex align-items-center query-results-header">
+                        <h5 class="header-result-title">results</h5>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="results-lg" id="list-vehicle-results">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block scripts %}
+{% endblock %}

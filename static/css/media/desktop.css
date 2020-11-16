@@ -1,0 +1,16 @@
+@media only screen and (min-width: 768px) {
+    .query-results-many-field {
+        height: 254px;
+    }
+
+    .result-edit {
+        height: 308px;
+    }
+
+    .query-results-one-field {
+        height: 300px;
+        margin: 0 0 0 15px;
+        overflow: scroll;
+    }
+
+}

@@ -1,0 +1,21 @@
+@media only screen and (max-width: 600px) {
+    h1 {
+      margin-left: 10px;
+    }
+
+    .query-results-many-field, .query-results-one-field {
+        height: 400px;
+        margin: 15px 0 35px 0;
+    }
+
+    .results-lg {
+      overflow: scroll;
+      height: 350px;
+    }
+
+    .results {
+      overflow: scroll;
+      height: 400px;
+    }
+}
+
